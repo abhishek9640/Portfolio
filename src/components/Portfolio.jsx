@@ -1,22 +1,27 @@
 import React from 'react';
 import Library from '../assets/library.png';
 import Linkdin from '../assets/linkdin.png';
-// import LinkdinLogin from '../assets/linkdin-login.png';
 import GannaClone from '../assets/ganna-clone.png';
 
 export default function Portfolio() {
   const portfolio = [
     {
       id: 1,
-      src: Library
+      src: Library,
+      name: 'Granth (VGI Library)',
+      link: 'https://github.com/abhishek9640/GRANTH-VGI_Library'
     },
     {
       id: 2,
-      src: Linkdin
+      src: Linkdin,
+      name: 'LinkedIn Clone',
+      link: 'https://github.com/abhishek9640/Linkdin-Clone'
     },
     {
       id: 3,
-      src: GannaClone
+      src: GannaClone,
+      name: 'Ganna Clone',
+      link: 'https://github.com/abhishek9640/Gaana-Clone'
     },
   ];
 
@@ -28,13 +33,14 @@ export default function Portfolio() {
           <p className='py-6'>Check out some of my work right here</p>
         </div>
 
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8px-12 sm:px-0'>
-          {portfolio.map(({ id, src }) => (
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
+          {portfolio.map(({ id, src, link, name }) => (
             <div key={id} className='shadow-md shadow-gray-600 rounded-lg m-2'>
               <img src={src} alt="" className='rounded-md duration-200 hover:scale-105 p-5' />
               <div className='flex items-center justify-center'>
-                <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Demo</button>
-                <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Code</button>
+                <a href={link} target='_blank' rel='noopener noreferrer'>
+                  <button className=' px-6 py-3 m-4 duration-200 hover:scale-105'>{name}</button>
+                </a>
               </div>
             </div>
           ))}
